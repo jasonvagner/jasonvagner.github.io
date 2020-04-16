@@ -4,3 +4,4 @@
 
 layout: home
 ---
+This is the main content of the index dot md file.
