@@ -4,16 +4,21 @@
   <iframe allowfullscreen sandbox="allow-top-navigation allow-scripts allow-popups allow-popups-to-escape-sandbox" width="500" height="800" src="https://mastofeed.com/apiv2/feed?userurl=https%3A%2F%2Fmastodon.social%2Fusers%2Fjvagner&theme=auto&size=100&header=true&replies=false&boosts=false"></iframe>
   -->
 
-  <style>
-        /* Optional: Basic styling for your feed container */
+<style>
+        /*
+         * This CSS block handles the left alignment of the whole container.
+         * 'margin: 20px 0 20px 20px;' forces a left margin and zero right margin.
+         */
         .bluesky-container {
             max-width: 600px;
-            margin: 20px auto;
+            margin: 20px 0 20px 20px; /* Top, Right, Bottom, Left margins */
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 8px;
+            text-align: left; /* Ensures elements inside align to the left */
         }
-        /* Ensure the text inside the container is also left-aligned */
+
+        /* Styles for your page's H1 and P tags (optional, but good practice) */
         .bluesky-container h1,
         .bluesky-container p {
             text-align: left;
@@ -28,22 +33,24 @@
 <body>
 
     <div class="bluesky-container">
-        <h1>My Latest Bluesky Posts 2</h1>
+        <h1>My Latest Bluesky Posts</h1>
 
         <bsky-embed 
-            username="jvagner.bsky.social" 
+            username="yourhandle.bsky.social" 
             limit="5" 
             theme="light"
             custom-styles="
                 .content p, .content span { 
-                    font-size: 2.2em !important; 
+                    font-size: 1.15em !important; /* Made this slightly larger */
                 } 
-                .header .handle { 
-                    font-size: 2.4em !important; 
+                .header .handle, .header .name { 
+                    font-size: 1.2em !important; 
                 }
             "
-          >
+        >
         </bsky-embed>
+
+        <p>Follow me on <a href="https://bsky.app/profile/yourhandle.bsky.social">Bluesky!</a></p>
     </div>
   
 </body></html>
