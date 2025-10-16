@@ -13,6 +13,11 @@
             border: 1px solid #ddd;
             border-radius: 8px;
         }
+        /* Ensure the text inside the container is also left-aligned */
+        .bluesky-container h1,
+        .bluesky-container p {
+            text-align: left;
+        }
     </style>
     
     <script 
@@ -29,7 +34,15 @@
             username="jvagner.bsky.social" 
             limit="5" 
             theme="light"
-        >
+            custom-styles="
+                .content p, .content span { 
+                    font-size: 1.1em !important; 
+                } 
+                .header .handle { 
+                    font-size: 1.2em !important; 
+                }
+            "
+          >
         </bsky-embed>
     </div>
   
