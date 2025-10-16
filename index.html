@@ -1,54 +1,57 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <style>
-    body {
-      font: 9px monospace;
-      line-height: 9px;
-      background-color: white;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Homepage with Bluesky Feed</title>
+    <style>
+        /*
+         * This CSS block handles the left alignment of the whole container.
+         * 'margin: 20px 0 20px 20px;' forces a left margin and zero right margin.
+         */
+        .bluesky-container {
+            max-width: 600px;
+            margin: 20px 0 20px 20px; /* Top, Right, Bottom, Left margins */
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: left; /* Ensures elements inside align to the left */
+        }
 
-    /* Centering wrapper for both ASCII and Bluesky box */
-    .content-wrapper {
-      width: 600px;               /* match Bluesky box width */
-      margin-left: auto;
-      margin-right: auto;
-      padding-top: 20px;
-    }
-
-    /* ASCII art container */
-    .ascii-art {
-      width: 100%;                /* fills wrapper width */
-      overflow-x: auto;
-      white-space: pre;
-      display: block;
-      margin-bottom: 20px;
-    }
-
-    /* Optional: if you have a box element for Bluesky embed */
-    .bluesky-box {
-      width: 100%;
-      border: 1px solid #ccc;
-      padding: 12px;
-      box-sizing: border-box;
-      background: #f9f9f9;
-    }
-  </style>
+        /* Styles for your page's H1 and P tags (optional, but good practice) */
+        .bluesky-container h1,
+        .bluesky-container p {
+            text-align: left;
+        }
+    </style>
+    
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" 
+        async
+    ></script>
 </head>
 <body>
-  <div class="content-wrapper">
-    <div class="ascii-art">
-      <!-- paste your existing ASCII art here exactly as-is -->
-      <span style="color:#6e7881">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:#63635d">║</span>...
-      <!-- (rest of your giant span list) -->
+
+    <div class="bluesky-container">
+        <h1>My Latest Bluesky Posts</h1>
+
+        <bsky-embed 
+            username="jvagner.bsky.social" 
+            limit="5" 
+            theme="light"
+            custom-styles="
+                .content p, .content span { 
+                    font-size: 1.15em !important; /* Made this slightly larger */
+                } 
+                .header .handle, .header .name { 
+                    font-size: 1.2em !important; 
+                }
+            "
+        >
+        </bsky-embed>
+
+        <p>Follow me on <a href="https://bsky.app/profile/jvagner.bsky.social">Bluesky!</a></p>
     </div>
 
-    <div class="bluesky-box">
-      <!-- your Bluesky box content here -->
-      <p>Bluesky feed or link...</p>
-    </div>
-  </div>
 </body>
 </html>
