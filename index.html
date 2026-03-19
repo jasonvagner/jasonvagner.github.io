@@ -31,7 +31,11 @@
         .header {
             white-space: pre;
             line-height: 1.15;
-            font-family: 'Courier New', Courier, monospace;
+        }
+
+        pre {
+            font-family: 'Courier New', Courier, monospace !important;
+            margin: 0;
         }
 
         .user-info {
@@ -121,15 +125,15 @@
         async function main() {
             const header = document.createElement('div');
             header.className = 'header';
-            header.innerHTML = `+==================================================+
+            header.innerHTML = `<pre style="font-family: 'Courier New', Courier, monospace; margin: 0; line-height: 1.1;">+==================================================+
 |                                                  |
-|   JJJJJJ      AAA     SSS      OOO     NNNN     |
-|      JJ      A   A   S        O   O    N   N     |
-|      JJ      AAAAA    SSS    O   O    NNNN      |
-|      JJ      A   A       S   O   O    N   N     |
-|   JJJJJ      A   A    SSS     OOO     N   N     |
+|    J   J   AAA   SSS   OOO   NNNN               |
+|    J   J  A   A   S   O   O  N   N              |
+|    J   J  AAAAA   S   O   O  NNNN               |
+|  J J   J  A   A   S   O   O  N   N              |
+|   JJJ    A   A  SSS   OOO   N   N               |
 |                                                  |
-+==================================================+`;
++==================================================+</pre>`;
             output.appendChild(header);
 
             const userInfo = document.createElement('div');
