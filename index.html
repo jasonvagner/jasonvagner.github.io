@@ -6,6 +6,8 @@
     <title>jason - vagner.net</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📟</text></svg>">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
         * {
             box-sizing: border-box;
         }
@@ -13,8 +15,8 @@
         body {
             background-color: #0a0a0a;
             color: #ffb000;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 18px;
+            font-family: 'VT323', 'Courier New', Courier, monospace;
+            font-size: 20px;
             line-height: 1.4;
             margin: 0;
             padding: 20px;
@@ -26,11 +28,16 @@
             margin: 0 auto;
         }
 
-        .header pre,
-        .user-info pre {
-            font-family: 'Courier New', Courier, monospace;
+        .header pre {
+            font-family: 'Courier New', Courier, monospace !important;
             margin: 0;
-            line-height: 1.2;
+            line-height: 1.25;
+            white-space: pre;
+            font-size: 14px;
+            letter-spacing: 0;
+        }
+
+        .user-info {
             white-space: pre;
         }
 
@@ -121,15 +128,15 @@
         async function main() {
             const header = document.createElement('div');
             header.className = 'header';
-            header.innerHTML = `<pre>+==============================================+
-|                                            |
-|   J     AAA   SSS   OOO   NNNN            |
-|   J    A   A   S   O   O  N   N           |
-|   J    AAAAA   S   O   O  NNNN            |
-|   J    A   A   S   O   O  N   N           |
-|   J    A   A  SSS   OOO   N   N           |
-|                                            |
-+==============================================+</pre>`;
+            header.innerHTML = `<pre>################################################################################
+#                                                                              #
+#    J   J   AAA   SSS   OOO   NNNN                                           #
+#    J   J  A   A   S   O   O  N   N                                          #
+#    J   J  AAAAA   S   O   O  NNNN                                           #
+#    J   J  A   A   S   O   O  N   N                                          #
+#    J   J  A   A  SSS   OOO   N   N                                          #
+#                                                                              #
+################################################################################</pre>`;
             output.appendChild(header);
 
             const userInfo = document.createElement('div');
